@@ -1,0 +1,8 @@
+[[mgr.prepend_keymap]]
+on   = [ "e", "x" ]
+run  = "shell 'ouch decompress %s' --block"
+desc = "Decompress archive"
+[[mgr.prepend_keymap]]
+on   = [ "e", "e" ]
+run  = "shell 'nvim %s' --block"
+desc = "Edit with neovim"

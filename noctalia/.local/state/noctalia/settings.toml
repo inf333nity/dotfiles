@@ -1,0 +1,183 @@
+config_version = 14
+
+[audio]
+enable_sounds = false
+
+[bar.default]
+background_opacity = 0.58999998681247234
+start = [ "ArchIcon", "group:g2", "bar" ]
+
+    [bar.default.dead_zone.actions]
+    right = "none"
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "workspaces", "active_window" ]
+    opacity = 0.60000002384185791
+    padding = 10.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "output_volume", "media", "audio_visualizer" ]
+    opacity = 0.60000002384185791
+    padding = 10.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "widget_2", "clock" ]
+    opacity = 0.60000002384185791
+    padding = 10.0
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+auto_hide = true
+reserve_space = false
+
+[lockscreen]
+transition = [ "disc" ]
+wallpaper = "/home/pd/Pictures/Wallpapers/wallhaven-yq2zwl_1920x1080.png"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@FALLBACK"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "FALLBACK"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@FALLBACK".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[osd.kinds]
+lock_keys = false
+
+[plugin_settings."noctalia/translator"]
+target_lang = "ru"
+
+[plugins]
+enabled = [ "thepunkoff/pomodoro", "noctalia/translator" ]
+
+[shell]
+app_icon_color = "primary"
+font_family = "RobotoMono Nerd Font Md"
+screen_time_enabled = true
+
+    [shell.launcher.providers.calculator]
+    global = false
+
+    [shell.screenshot]
+    directory = "/home/pd/Pictures/Screenshots"
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Catppuccin Macchiato Blue"
+custom_palette = "148-vib"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "soft"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty", "qt", "starship" ]
+    community_ids = [ "pywalfox", "neovim", "obsidian", "heroiclauncher", "papirus-icons", "fzf", "lazygit", "yazi" ]
+
+[wallpaper]
+transition = [ "disc" ]
+
+    [wallpaper.default]
+    path = "/home/pd/Pictures/Wallpapers/Quationable/Illustrious_00445_.png"
+
+    [wallpaper.last]
+    path = "/home/pd/Pictures/Wallpapers/Quationable/Illustrious_00445_.png"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/pd/Pictures/Wallpapers/Quationable/Illustrious_00445_.png"
+
+[widget.ArchIcon]
+scale = 1.4000000000000001
+text = ""
+type = "text"
+
+[widget.audio_visualizer]
+width = 30
+
+[widget.bar]
+type = "noctalia/wallpaper_depth:bar"
+
+[widget.widget_2]
+type = "thepunkoff/pomodoro:widget"

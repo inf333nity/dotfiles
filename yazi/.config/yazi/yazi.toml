@@ -1,0 +1,30 @@
+[opener]
+image = [
+  { run = "imv %s", orphan = true, for = "unix" }
+]
+video = [
+  { run = "celluloid %s", orphan = true, for = "unix" }
+]
+extract = [
+    { run = "ya pub extract --list %s", desc = "Extract here" },
+]
+#archive = [
+# { run = "shell '$SHELL' --block", orphan = true, for = "unix" }
+#]
+[open]
+rules = [
+  { mime = "image/*", use = "image" },
+  #  { mime = "application/gzip", use = "archive" },
+  #{ url = "*.7z", use = "archive" }
+  { url = "*.{mkv}", use = "video" },
+  { mime = "application/zip", use = "extract" },
+  { mime = "application/x-tar", use = "extract" },
+  { mime = "application/x-gzip", use = "extract" },
+  { mime = "application/x-bzip2", use = "extract" },
+  { mime = "application/x-xz", use = "extract" },
+  { mime = "application/x-7z-compressed", use = "extract" },
+  { mime = "application/vnd.rar", use = "extract" },
+  { mime = "application/7z-compressed", use = "extract" },
+
+]
+

@@ -1,0 +1,6 @@
+hl.on("hyprland.start", function()
+	hl.exec_cmd("noctalia")
+	hl.exec_cmd("firefox")
+	hl.exec_cmd("v2rayn")
+	hl.exec_cmd("xrdb -merge /home/pd/.Xresources")
+end)
