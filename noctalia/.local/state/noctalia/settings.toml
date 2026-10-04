@@ -36,7 +36,7 @@ start = [ "ArchIcon", "group:g2", "bar" ]
     enabled = true
     fill = "surface_variant"
     id = "g3"
-    members = [ "widget_2", "clock" ]
+    members = [ "clock", "widget_2" ]
     opacity = 0.60000002384185791
     padding = 10.0
 
@@ -153,20 +153,20 @@ source = "wallpaper"
 wallpaper_scheme = "soft"
 
     [theme.templates]
-    builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty", "qt", "starship" ]
+    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kitty", "qt", "starship" ]
     community_ids = [ "pywalfox", "neovim", "obsidian", "heroiclauncher", "papirus-icons", "fzf", "lazygit", "yazi" ]
 
 [wallpaper]
 transition = [ "disc" ]
 
     [wallpaper.default]
-    path = "/home/pd/Pictures/Wallpapers/Quationable/Illustrious_00445_.png"
+    path = "/home/pd/Pictures/Wallpapers/Illustrious_00192_.png"
 
     [wallpaper.last]
-    path = "/home/pd/Pictures/Wallpapers/Quationable/Illustrious_00445_.png"
+    path = "/home/pd/Pictures/Wallpapers/Illustrious_00192_.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/pd/Pictures/Wallpapers/Quationable/Illustrious_00445_.png"
+    path = "/home/pd/Pictures/Wallpapers/Illustrious_00192_.png"
 
 [widget.ArchIcon]
 scale = 1.4000000000000001

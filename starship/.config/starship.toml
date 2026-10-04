@@ -6,19 +6,37 @@ add_newline = false
 
 format = """
 [╭─  ](overlay1)\
+$username\
+$hostname\
 $directory\
 $git_branch\
 $git_status\
+$python\
+$nodejs\
+$rust\
+$golang\
+$docker_context\
+$kubernetes\
 $fill\
+$status\
 $cmd_duration\
 $time
 [╰─ ](overlay1)$character"""
+
+# ─────────────────────────────────────────────
+# Directory
+# ─────────────────────────────────────────────
 
 [directory]
 style = "bold lavender"
 format = "[$path]($style) "
 truncation_length = 3
 truncate_to_repo = false
+read_only = " 󰌾"
+
+# ─────────────────────────────────────────────
+# Git
+# ─────────────────────────────────────────────
 
 [git_branch]
 symbol = " "
@@ -29,13 +47,104 @@ format = "[$symbol$branch]($style) "
 style = "red"
 format = "([$all_status$ahead_behind]($style)) "
 
-[fill]
+# ─────────────────────────────────────────────
+# Python
+# ─────────────────────────────────────────────
+
+[python]
 symbol = " "
+style = "yellow"
+format = "[$symbol$pyenv_prefix$version( $virtualenv)]($style) "
+
+pyenv_version_name = true
+pyenv_prefix = "pyenv "
+
+detect_extensions = ["py"]
+detect_files = [
+    "requirements.txt",
+    "pyproject.toml",
+    "Pipfile",
+    "tox.ini",
+    "setup.py",
+]
+
+# ─────────────────────────────────────────────
+# Node
+# ─────────────────────────────────────────────
+
+[nodejs]
+symbol = " "
+style = "green"
+format = "[$symbol$version]($style) "
+
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_files = [
+    "package.json",
+    ".node-version",
+]
+
+# ─────────────────────────────────────────────
+# Rust
+# ─────────────────────────────────────────────
+
+[rust]
+symbol = " "
+style = "peach"
+format = "[$symbol$version]($style) "
+
+# ─────────────────────────────────────────────
+# Go
+# ─────────────────────────────────────────────
+
+[golang]
+symbol = " "
+style = "cyan"
+format = "[$symbol$version]($style) "
+
+# ─────────────────────────────────────────────
+# Docker
+# ─────────────────────────────────────────────
+
+[docker_context]
+symbol = " "
+style = "sapphire"
+format = "[$symbol$context]($style) "
+
+only_with_files = true
+
+# ─────────────────────────────────────────────
+# Kubernetes
+# ─────────────────────────────────────────────
+
+[kubernetes]
+symbol = "󱃾 "
+style = "sky"
+format = "[$symbol$context( \\($namespace\\))]($style) "
+
+disabled = false
+
+# ─────────────────────────────────────────────
+# Command status
+# ─────────────────────────────────────────────
+
+[status]
+disabled = false
+symbol = "✘ "
+style = "red"
+format = "[$symbol$status]($style) "
+
+# ─────────────────────────────────────────────
+# Command duration
+# ─────────────────────────────────────────────
 
 [cmd_duration]
 min_time = 2000
 format = "[$duration]($style) "
 style = "subtext0"
+
+# ─────────────────────────────────────────────
+# Time
+# ─────────────────────────────────────────────
 
 [time]
 disabled = false
@@ -43,10 +152,36 @@ format = "[$time]($style)"
 style = "subtext0"
 time_format = "%H:%M"
 
+# ─────────────────────────────────────────────
+# Fill
+# ─────────────────────────────────────────────
+
+[fill]
+symbol = " "
+
+# ─────────────────────────────────────────────
+# Character
+# ─────────────────────────────────────────────
+
 [character]
 success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](yellow)"
+
+# ─────────────────────────────────────────────
+# Optional system information
+# ─────────────────────────────────────────────
+
+[username]
+show_always = false
+style_user = "text"
+style_root = "red"
+format = "[$user]($style) "
+
+[hostname]
+ssh_only = true
+style = "pink"
+format = "[@$hostname]($style) "
 
 
 # <<< NOCTALIA STARSHIP PALETTE <<<
@@ -57,40 +192,40 @@ vimcmd_symbol = "[❮](yellow)"
 
 [palettes.noctalia]
 # Standard colors
-blue      = "#b3b186"
-red       = "#c36970"
-green     = "#c18b8d"
-yellow    = "#b49b85"
-cyan      = "#d0beaf"
-magenta   = "#d3acad"
-white     = "#f3f2f2"
-black     = "#302122"
+blue      = "#a785ad"
+red       = "#fd4663"
+green     = "#8b96c1"
+yellow    = "#8d7cb6"
+cyan      = "#b8add1"
+magenta   = "#acb4d3"
+white     = "#f2f2f3"
+black     = "#212530"
 
 # Extended palette (Catppuccin-compatible names)
-rosewater = "#b49b85"
-flamingo  = "#c36970"
-pink      = "#d3acad"
-mauve     = "#d3acad"
-maroon    = "#c36970"
-peach     = "#b49b85"
-teal      = "#d0beaf"
-sky       = "#d0beaf"
-sapphire  = "#b3b186"
-lavender  = "#d3acad"
+rosewater = "#8d7cb6"
+flamingo  = "#fd4663"
+pink      = "#acb4d3"
+mauve     = "#acb4d3"
+maroon    = "#fd4663"
+peach     = "#8d7cb6"
+teal      = "#b8add1"
+sky       = "#b8add1"
+sapphire  = "#a785ad"
+lavender  = "#acb4d3"
 
 # Text shades
-text      = "#f3f2f2"
-subtext1  = "#f3f2f2"
-subtext0  = "#746364"
+text      = "#f2f2f3"
+subtext1  = "#f2f2f3"
+subtext0  = "#636773"
 
 # Surface shades
-overlay2  = "#746364"
-overlay1  = "#746364"
-overlay0  = "#302122"
-surface2  = "#302122"
-surface1  = "#302122"
-surface0  = "#231a1a"
-base      = "#231a1a"
-mantle    = "#231a1a"
-crust     = "#231a1a"
+overlay2  = "#636773"
+overlay1  = "#636773"
+overlay0  = "#212530"
+surface2  = "#212530"
+surface1  = "#212530"
+surface0  = "#1a1c23"
+base      = "#1a1c23"
+mantle    = "#1a1c23"
+crust     = "#1a1c23"
 # <<< NOCTALIA STARSHIP PALETTE <<<

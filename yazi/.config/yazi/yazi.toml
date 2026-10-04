@@ -25,6 +25,6 @@ rules = [
   { mime = "application/x-7z-compressed", use = "extract" },
   { mime = "application/vnd.rar", use = "extract" },
   { mime = "application/7z-compressed", use = "extract" },
-
+  { mime = "application/rar", use = "extract" },
 ]
 

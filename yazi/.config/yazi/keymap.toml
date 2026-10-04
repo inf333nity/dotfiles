@@ -6,3 +6,7 @@ desc = "Decompress archive"
 on   = [ "e", "e" ]
 run  = "shell 'nvim %s' --block"
 desc = "Edit with neovim"
+[[mgr.prepend_keymap]]
+on = ["z"]
+run = "plugin zoxide"
+desc = "Jump via zoxide"
