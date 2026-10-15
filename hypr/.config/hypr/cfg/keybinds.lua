@@ -82,3 +82,5 @@ hl.bind(
 )
 
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+
+hl.bind("SUPER + CTRL + F", hl.dsp.layout("expel"))

@@ -5,3 +5,5 @@ end
 set -g fish_greeting
 starship init fish | source
 zoxide init fish | source
+
+set -gx SUDO_EDITOR nvim

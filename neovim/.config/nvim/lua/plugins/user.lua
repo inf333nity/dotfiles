@@ -1,13 +1,7 @@
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
--- Here are some examples:
-
 ---@type LazySpec
 return {
-
-  -- == Examples of Adding Plugins ==
-
   {
+    
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       filesystem = {
@@ -19,12 +13,33 @@ return {
       },
     },
   },
+
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       source_selector = {
         winbar = false,
         statusline = false,
+      },
+    },
+  },
+
+  -- Перенос длинных строк только в Markdown
+  {
+    "AstroNvim/astrocore",
+    opts = {
+      autocmds = {
+        markdown_wrap = {
+          {
+            event = "FileType",
+            pattern = "markdown",
+            callback = function()
+              vim.opt_local.wrap = true
+              vim.opt_local.linebreak = true
+              vim.opt_local.breakindent = true
+            end,
+          },
+        },
       },
     },
   },
